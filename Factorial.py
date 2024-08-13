@@ -24,4 +24,5 @@ class Main():
 obj = Main()
 
 print(obj.factorial_iterative(5))
+#call recursive function
 print(obj.factorial_recursive(5))
