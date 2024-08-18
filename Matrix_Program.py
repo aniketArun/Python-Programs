@@ -31,6 +31,22 @@ class MyMatrix:
         else:
             print("Matrices cannot be added due to different dimensions")
             return None
+        
+    def subtractionOfMatrices(self, mat: 'MyMatrix'):
+        if self.rows == mat.rows and self.cols == mat.cols:
+            result = MyMatrix(self.rows, self.cols)
+            for i in range(self.rows):
+                row = []
+                for j in range(self.cols):
+                    row.append(self.mat[i][j] - mat.mat[i][j])
+                result.mat.append(row)
+            return result
+        else:
+            print("Matrices cannot be added due to different dimensions")
+            return None
+        
+    def multiplicationOfMatrices(self, mat: 'MyMatrix'):
+        pass
 
 # Driver code
 if __name__ == "__main__":
@@ -59,4 +75,10 @@ if __name__ == "__main__":
     result_matrix = matrix1.additionOfMatrices(matrix2)
     if result_matrix:
         print("Resultant Matrix after Addition:")
+        print(result_matrix)
+    
+    # Subtract the matrices
+    result_matrix = matrix1.subtractionOfMatrices(matrix2)
+    if result_matrix:
+        print("Resultant Matrix after Subtraction:")
         print(result_matrix)
